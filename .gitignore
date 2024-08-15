@@ -1,0 +1,15 @@
+# .terraform
+.terraform/
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+.terraform.lock.hcl
+
+# .Private
+.private/
+
+# Kubernetes
+*-join-command
+*.log
