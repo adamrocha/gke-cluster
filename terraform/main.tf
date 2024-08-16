@@ -10,18 +10,18 @@ terraform {
 
 provider "google" {
   project = var.project_id
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  region  = var.region
+  zone    = var.zone
 }
 
 resource "google_project_service" "kubernetes-api" {
   project = var.project_id
   service = "container.googleapis.com"
-
+/*
   timeouts {
     create = "30m"
     update = "40m"
   }
-
+*/
   disable_on_destroy = true
 }
