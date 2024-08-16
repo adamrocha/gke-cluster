@@ -1,6 +1,6 @@
 variable "project_id" {
   type    = string
-  default = "gke-autopilot-432610"
+  default = "gke-cluster-432717"
 }
 
 variable "region" {
