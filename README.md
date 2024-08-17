@@ -1,2 +1,2 @@
-# gke-autopilot
-gke autopilot cluster deplopyed with Terraform
+# gke-cluster
+gke cluster deplopyed with Terraform
