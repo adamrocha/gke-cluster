@@ -32,15 +32,15 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
 
   node_config {
     preemptible     = true
-    machine_type    = "e2-medium"
+    machine_type    = "e2-micro"
     service_account = google_service_account.default.email
     oauth_scopes    = ["https://www.googleapis.com/auth/cloud-platform"]
   }
 }
-
 /*
-resource "google_container_cluster" "default" {
-  name                = "gke-autopilot"
+resource "google_container_cluster" "autopilot" {
+  depends_on          = [google_project_service.kubernetes-api]
+  name                = "autopilot"
   enable_autopilot    = true
   deletion_protection = false
 }
