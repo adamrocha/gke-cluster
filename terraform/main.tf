@@ -5,8 +5,9 @@ provider "google" {
 }
 
 resource "google_project_service" "kubernetes-api" {
-  service            = "container.googleapis.com"
-  disable_on_destroy = false
+  service                    = "container.googleapis.com"
+  disable_on_destroy         = true
+  disable_dependent_services = true
 }
 
 resource "google_service_account" "default" {
@@ -15,6 +16,7 @@ resource "google_service_account" "default" {
 }
 
 resource "google_container_cluster" "primary" {
+  depends_on               = [google_project_service.kubernetes-api]
   name                     = "gke-cluster"
   location                 = var.region
   remove_default_node_pool = true
