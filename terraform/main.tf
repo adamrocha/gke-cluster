@@ -17,7 +17,7 @@ resource "google_service_account" "default" {
 
 resource "google_container_cluster" "primary" {
   depends_on               = [google_project_service.kubernetes-api]
-  name                     = "gke-cluster"
+  name                     = "primary"
   location                 = var.region
   remove_default_node_pool = true
   initial_node_count       = 1
